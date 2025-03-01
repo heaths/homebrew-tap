@@ -6,6 +6,14 @@ class Akv < Formula
   license "MIT"
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/heaths/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de1fea0bea3e049183ae65fb9eb7a8dfe437a82bea29e60f56fc68ce5e7b0612"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "661d82559b783eb1802cfa334901478979839022eabb1d5f6abe43ab3d093951"
+    sha256 cellar: :any_skip_relocation, ventura:       "ebee39ac2f1b86bef072094468b21902c741b64e34b97ac53e746e26d95b6226"
+  end
+
   depends_on "rust" => :build
 
   def install
