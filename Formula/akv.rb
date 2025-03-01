@@ -1,9 +1,9 @@
 class Akv < Formula
   desc "Azure Key Vault CLI"
   homepage "https://github.com/heaths/akv-cli-rs"
-  license "MIT"
   url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "9bf9c4801d59fb39535478f0052c6c430b349f9ff33bac9585bb777f813070c2"
+  license "MIT"
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
   depends_on "rust" => :build
