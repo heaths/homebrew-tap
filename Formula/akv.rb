@@ -22,6 +22,6 @@ class Akv < Formula
   end
 
   test do
-    assert_match "akv 0.2.0", shell_output(bin/"akv --version")
+    assert_match "akv 0.2.0", shell_output("#{bin}/akv --version")
   end
 end
