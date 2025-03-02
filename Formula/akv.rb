@@ -15,9 +15,11 @@ class Akv < Formula
     sha256 cellar: :any_skip_relocation, ventura:       "ebee39ac2f1b86bef072094468b21902c741b64e34b97ac53e746e26d95b6226"
   end
 
+  depends_on "openssl@3" => :build
   depends_on "rust" => :build
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"akv", "completion")
   end
