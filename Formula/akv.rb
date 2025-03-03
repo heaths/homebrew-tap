@@ -4,7 +4,7 @@ class Akv < Formula
   url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "9bf9c4801d59fb39535478f0052c6c430b349f9ff33bac9585bb777f813070c2"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
   bottle do
@@ -16,7 +16,10 @@ class Akv < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@3"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
