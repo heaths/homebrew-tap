@@ -15,10 +15,7 @@ class Akv < Formula
   end
 
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  depends_on "openssl@3"
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -27,6 +24,6 @@ class Akv < Formula
   end
 
   test do
-    assert_match "akv 0.3.0", shell_output(bin/"akv --version")
+    assert_match "akv 0.4.0", shell_output(bin/"akv --version")
   end
 end
