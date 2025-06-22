@@ -1,8 +1,8 @@
 class Akv < Formula
   desc "Azure Key Vault CLI"
   homepage "https://github.com/heaths/akv-cli-rs"
-  url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "aa6820147ad7f3ff5a4ae82a975ddc6b1a810464e593a8c4157d92f3ca48f5f8"
+  url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "ce7eff7db02e8f9b1a2c6eb90f4bc6bd9782da4f790c219f45ddf7dcd3ff3ce9"
   license "MIT"
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
@@ -24,6 +24,6 @@ class Akv < Formula
   end
 
   test do
-    assert_match "akv 0.4.0", shell_output(bin/"akv --version")
+    assert_match "akv #{version}", shell_output(bin/"akv --version")
   end
 end
