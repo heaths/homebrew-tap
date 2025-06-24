@@ -15,8 +15,16 @@ jobs:
           - macos-14
           - macos-15
           - ubuntu-22.04
+          - ubuntu-22.04-arm
+        include:
+          - os: ubuntu-22.04-arm
+            tier2: true
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Install Homebrew
+        if: matrix.tier2
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -31,6 +39,7 @@ jobs:
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
+        if: ${{ ! matrix.tier2 }}
 
       - run: brew test-bot --only-tap-syntax
 
