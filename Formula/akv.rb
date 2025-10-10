@@ -8,10 +8,10 @@ class Akv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/heaths/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "fadf1a45c1d9bad2d46969f55b5e3149e5a35aad11a69f3f924c435632e345b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "17cf104b24d3056b2a2da46ad73a80abf34e73679a91034864f5e7bddca749cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b2f83a76e08db4863683645cf3917fbf8568830f061cee77525eaff6b362359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df911fb9d1924699d896c322eed56e200a5cefa219a357e813e662d3ec9a312a"
+    sha256 cellar: :any,                 arm64_sequoia: "a326dddc39e0b9a5ec45d44f9c1856f1e5c1d3e7301fc33e0611af877b3b10fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0eb13e2b6c1b2ca0a567aaa487184e1140c761e7b1d3e2b1675beb96a507fa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e46f1a7db28105c88aeeb79cdc0dae52b477a68268a0f8685f769decac9e7bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0b4ca990820b3e4f7bc52809203b2d9c1ad1e25204cec4f114a44c73a348dc"
   end
 
   depends_on "rust" => :build
