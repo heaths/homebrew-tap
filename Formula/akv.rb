@@ -1,8 +1,8 @@
 class Akv < Formula
   desc "Azure Key Vault CLI"
   homepage "https://github.com/heaths/akv-cli-rs"
-  url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "50ee6da63e28c497f7514590a6d71659fdd631f989a2a3a0df4811f28efc585d"
+  url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "66e62a365f01e0774e1d8614f81ba64174e0eb8430b0657b9742ff6d4a806deb"
   license "MIT"
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
