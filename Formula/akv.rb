@@ -20,7 +20,7 @@ class Akv < Formula
   def install
     # Install nightly toolchain
     system "rustup-init", "-y", "--default-toolchain", "nightly", "--no-modify-path"
-    ENV.prepend_path "PATH", "#{ENV["HOME"]}/.cargo/bin"
+    ENV.prepend_path "PATH", "#{Dir.home}/.cargo/bin"
 
     # Configure OpenSSL
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
