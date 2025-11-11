@@ -23,7 +23,7 @@ class Akv < Formula
     system "cargo", "install", *std_cargo_args
     system "ls", "-l", bin.to_s
     ENV.prepend_path "PATH", bin
-    system "#{bin}/akv", "--version"
+    system "#{bin}/akv"
     generate_completions_from_executable(bin/"akv", "completion")
   end
 
