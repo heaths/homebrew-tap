@@ -20,9 +20,9 @@ class Akv < Formula
   def install
     system "rustup", "default", "nightly"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    system "cargo", "install", *std_cargo_args
     system "ls", "-l", bin.to_s
     system "#{bin}/akv", "--version"
-    system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"akv", "completion")
   end
 
