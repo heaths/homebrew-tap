@@ -1,6 +1,5 @@
-
 class RustNightly < Formula
-  desc "Rust nightly toolchain"
+  desc "Install Rust nightly toolchain"
   homepage "https://www.rust-lang.org"
   version "nightly-2025-11-11"
   license "Apache-2.0"
