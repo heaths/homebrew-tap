@@ -14,7 +14,7 @@ class Akv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0b4ca990820b3e4f7bc52809203b2d9c1ad1e25204cec4f114a44c73a348dc"
   end
 
-  depends_on "rust" => :build
+  depends_on "heaths/tap/rust-nightly" => :build
   depends_on "openssl@3"
 
   def install
