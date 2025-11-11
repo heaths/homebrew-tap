@@ -14,11 +14,17 @@ class Akv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0b4ca990820b3e4f7bc52809203b2d9c1ad1e25204cec4f114a44c73a348dc"
   end
 
-  depends_on "heaths/tap/rust-nightly" => :build
+  depends_on "rustup-init" => :build
   depends_on "openssl@3"
 
   def install
+    # Install nightly toolchain
+    system "rustup-init", "-y", "--default-toolchain", "nightly", "--no-modify-path"
+    ENV.prepend_path "PATH", "#{ENV["HOME"]}/.cargo/bin"
+
+    # Configure OpenSSL
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"akv", "completion")
   end
