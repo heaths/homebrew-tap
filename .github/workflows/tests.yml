@@ -35,10 +35,7 @@ jobs:
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
 
-      - run: brew test-bot --cleanup --only-cleanup-before
-
-      - run: git -C "$(brew --repository homebrew/core)" clean -df
-        continue-on-error: true
+      - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
         if: ${{ ! matrix.tier2 }}
