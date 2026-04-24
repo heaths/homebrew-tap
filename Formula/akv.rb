@@ -21,7 +21,7 @@ class Akv < Formula
     system "rustup", "default", "nightly"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"akv", "completion")
+    generate_completions_from_executable(bin/"akv", "completion", shells: [:bash, :fish, :pwsh, :zsh])
   end
 
   test do
