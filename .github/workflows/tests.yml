@@ -32,7 +32,7 @@ jobs:
 
       - run: brew test-bot --only-setup
         env:
-          HOMEBREW_NO_SANDBOX_LINUX: ${{ matrix.os == 'ubuntu-22.04-arm' && '1' || '' }}
+          HOMEBREW_NO_SANDBOX_LINUX: ${{ runner.os == 'Linux' && '1' || '' }}
 
       - run: brew test-bot --only-tap-syntax
 
