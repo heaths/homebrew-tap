@@ -4,7 +4,7 @@ class Akv < Formula
   url "https://github.com/heaths/akv-cli-rs/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "0287b6af5ba6420cbe0cb254efb12988e12857d1e976d0b6ea58a99109ef582e"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/heaths/akv-cli-rs.git", branch: "main"
 
   bottle do
